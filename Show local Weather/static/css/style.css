@@ -1,0 +1,56 @@
+#sun{
+    background-color:black;
+    border-radius: 50%;
+    border:solid 4px yellow;
+
+    width:100px;
+    height:100px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    animation:spin 12s infinite linear;
+}
+
+#rays{
+    width: 0.5rem;
+    height: 2.6rem;
+    background: yellow;
+    display: block;
+    transform: 50deg;
+    position: absolute;
+    top: -3rem;
+    left: 2.8rem;
+    box-shadow: 0 9.6rem yellow;
+}
+
+#rays:before{
+    content: '';
+    width: 0.5rem;
+    height: 2.6rem;
+    background:yellow;
+    display: block;
+    transform: rotate(126deg);
+    position: absolute;
+    top: 7.8rem;
+    left: 4.1rem;
+    box-shadow: 0 9.6rem yellow;
+}
+
+#rays:after{
+    content: '';
+    width: 0.5rem;
+    height: 2.6rem;
+    background:yellow;
+    display: block;
+    transform: rotate(50deg);
+    position: absolute;
+    top: 2rem;
+    left: 3.8rem;
+    box-shadow: 0 9.4rem yellow;
+}
+
+@keyframes spin{
+    100% {
+        transform:rotate(360deg);
+    }
+}
