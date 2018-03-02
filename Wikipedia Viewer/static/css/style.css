@@ -1,0 +1,46 @@
+body{
+    /* background-color: #003742!important; */
+    background-color: #0278AE!important;
+}
+
+p{
+    color:white;
+}
+
+.fa-times{
+    /* position: absolute!important;
+    left: 11.5%!important;
+    top: 24%!important; */
+    margin-left: -4%;
+
+}
+
+/* .search-area{
+    font-size: 20px;
+} */
+
+.search-area p{
+    margin: 2%;
+    font-size:17px;
+}
+
+#wiki-search{
+    background-color: #0278AE;
+    border-color: #fff;
+    border-radius: 20px; /*if we give pixels the circle formed is better*/
+    /* border-bottom-style: solid; */
+    box-shadow: none!important;
+    border-style: solid!important;
+    width: 50%;
+    height:40px;
+    border:3px;
+}
+
+ a{
+    color:#fff!important;
+}
+.title{
+    color: white;
+    text-align: center;
+    margin-bottom: 4%;
+}
