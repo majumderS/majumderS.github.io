@@ -1,11 +1,16 @@
 body{
     /* background-color: #003742!important; */
     margin:0px;
+    background-image:url("../images/maths_bg_board2.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
 .title{
-    color: black;
+    color: white;
     text-align: center;
     margin-bottom: 4%;
 }
@@ -29,6 +34,10 @@ body{
 #calc_header{
     text-align: center;
     height: 30px;
+    color:white;
+    font-size: 15px;
+    font-weight: 600;
+    background: white;
 }
 
 .calc_btn{
@@ -38,11 +47,14 @@ body{
     margin-top: -1px;
     height: 50px;
     border: 1px solid grey;
+    color:white;
+    background: #2E383F;
 }
 
 .btn_last_col{
-background: #0074E4;
-color:white;
+/* background: #0074E4; */
+background: #F9A828;
+color:black;
 }
 
 .row{
