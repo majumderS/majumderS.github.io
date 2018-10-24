@@ -378,11 +378,13 @@ a:hover, a:focus, a:active {
 }
 
 .profile-dp{
-  border-style: solid;
+  /*border-style: solid;*/
   max-width: 24%;
   border-radius: 50%;
   margin-top:-5%;
   margin-bottom: 2%;
+  width: 300px;
+  height: 311px;
 }
 
 /*-------------------------------------
