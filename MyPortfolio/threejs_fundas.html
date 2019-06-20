@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <title>Three js fundas</title>
+</head>
+
+<body>
+    <canvas id='c'></canvas>
+    <script src="js/three.js"></script>
+
+    <script>
+        'use strict';
+
+        /* global THREE */
+
+        function main() {
+            const canvas = document.querySelector('#c');
+            const renderer = new THREE.WebGLRenderer({ canvas });
+            renderer.setSize( window.innerWidth, window.innerHeight );
+
+
+            //get a camera
+            const fov = 120;
+            const aspect = 2;  // the canvas default
+            const near = 0.1;
+            const far = 1000;
+            const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+            camera.position.z = 2;
+
+            //get a scene
+            const scene = new THREE.Scene();
+
+            //setting uplight at position -1,2,4 and targetting 0,0,0  of object
+            {
+                const color = 0xFFFFFF;
+                const intensity = 1;
+                const light = new THREE.DirectionalLight(color, intensity);
+                light.position.set(-1, 2, 4);
+                scene.add(light);
+            }
+
+            //get a box
+            const boxWidth = 1;
+            const boxHeight = 1;
+            const boxDepth = 1;
+            const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+
+            function makeInstance(geometry, color, x) {
+                const material = new THREE.MeshPhongMaterial({ color });
+
+                const cube = new THREE.Mesh(geometry, material);
+                scene.add(cube);
+
+                cube.position.x = x;
+
+                return cube;
+            }
+
+            const cubes = [
+                makeInstance(geometry, 0x44aa88, 0),
+                makeInstance(geometry, 0x8844aa, -2),
+                makeInstance(geometry, 0xaa8844, 2),
+            ];
+            // const material = new THREE.MeshBasicMaterial({ color: 0x44aa88 }); //directional light doesnt affect
+            // const material = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
+
+
+         
+            function render(time) {
+                time *= 0.001;  // convert time to seconds
+
+                cubes.forEach((cube) => {
+
+                    cube.rotation.x = time;
+                    cube.rotation.y = time;
+                });
+                renderer.render(scene, camera);
+
+                requestAnimationFrame(render);
+            }
+            requestAnimationFrame(render);
+
+        }
+        main();
+    </script>
+</body>
+
+</html>
